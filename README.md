@@ -58,7 +58,7 @@ The original project documentation states that the 2D parallel implementation su
 
 ## Scientific Scope
 
-Based on the available project documentation, the repository includes or is intended to include:
+The repository includes:
 
 - compositional flow in porous media;
 - two-phase flow;
@@ -69,7 +69,7 @@ Based on the available project documentation, the repository includes or is inte
 - optional Sparse Grid surrogate acceleration;
 - MATLAB post-processing.
 
-The current documentation does not fully specify the governing equations, discretization, nonlinear solution method, linear solver, well model, boundary conditions, or thermodynamic model. These details should be documented from the source code or associated publications rather than inferred.
+The current documentation does not fully specify the governing equations, discretization, nonlinear solution method, linear solver, boundary conditions, or thermodynamic model. These details should be documented from the source code or associated publications rather than inferred.
 
 ---
 
@@ -145,9 +145,9 @@ Because the four implementations may use different build and execution procedure
 Typical workflow:
 
 ```bash
-cd REPLACE_WITH_SERIAL_FOLDER
+cd serial-fortran
 make
-./REPLACE_WITH_EXECUTABLE
+./CompositionalFlow_fortran
 ```
 
 ### Parallel 2D Fortran
@@ -155,8 +155,8 @@ make
 The MPI process count must be consistent between the input configuration, Makefile or launch command, and cluster script.
 
 ```bash
-cd Hpc
-make
+cd parallel-2d-fortran
+make -f Makefile.mac
 mkdir -p case1
 mpirun -np 4 ./CompositionalFlow_fortran_hpc
 ```
@@ -166,10 +166,10 @@ mpirun -np 4 ./CompositionalFlow_fortran_hpc
 Typical workflow:
 
 ```bash
-cd REPLACE_WITH_3D_HPC_FOLDER
-make
+cd parallel-3d-fortran
+make -f Makefile.mac
 mkdir -p case1
-mpirun -np 8 ./REPLACE_WITH_EXECUTABLE
+mpirun -np 8 ./CompositionalFlow_fortran_hpc_3D
 ```
 
 The exact executable name and process-grid configuration should be copied from the existing build files.
@@ -179,7 +179,7 @@ The exact executable name and process-grid configuration should be copied from t
 Typical workflow:
 
 ```matlab
-cd('REPLACE_WITH_MATLAB_FOLDER')
+cd('matlab')
 % Run the documented main script.
 ```
 
