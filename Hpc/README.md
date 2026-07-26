@@ -17,8 +17,6 @@ This repository contains a parallel **Fortran** simulator for **2D two-phase com
 
 In addition to compositional two-phase flow, the framework can also be configured for single-phase simulations. Optional Sparse Grid surrogate models are available to accelerate flash calculations.
 
-> This README is reorganized from the original project documentation while preserving the documented functionality and usage instructions. The original documentation describes MPI execution, Shaheen/Neser deployment, Sparse Grid configuration, and output generation.
-
 ---
 
 # Features
@@ -54,7 +52,7 @@ In addition to compositional two-phase flow, the framework can also be configure
 
 - Modern Fortran compiler
 - MPI implementation (OpenMPI / Intel MPI)
-- Linux
+- Linux / Mac
 - Make
 - MATLAB (optional)
 
@@ -87,42 +85,6 @@ The number of MPI processes must remain consistent in:
 1. The input file (`proceAlloc(...)`)
 2. The Makefile
 3. The cluster job script
-
----
-
-# Running on Shaheen
-
-Load the required environment
-
-```bash
-module load bluegene
-```
-
-Create an output directory before execution.
-
-```bash
-mkdir case1
-```
-
----
-
-# Running on Neser
-
-Load required modules
-
-```bash
-module unload openmpi/1.5.4/gcc
-module load intel-compilers/11.1
-module load openmpi/1.6.4/intel
-```
-
-Create the output directory
-
-```bash
-mkdir case1
-```
-
-For large simulations, additional compute nodes may be required to avoid insufficient virtual memory.
 
 ---
 
@@ -202,19 +164,6 @@ matlabplot.m
 ```
 
 which generates visualization figures.
-
----
-
-# Future Improvements
-
-Potential enhancements include:
-
-- GitHub Actions CI
-- Unit tests
-- Doxygen documentation
-- Performance benchmark results
-- Example datasets
-- Docker support
 
 ---
 
