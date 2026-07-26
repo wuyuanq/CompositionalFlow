@@ -54,19 +54,6 @@ The original project documentation states that the 2D parallel implementation su
 | 3D HPC solver | Fortran + MPI | Parallel three-dimensional simulation | parallel-3d-fortran |
 | MATLAB solver | MATLAB | Prototyping, analysis, and visualization | matlab |
 
-### Recommended directory names
-
-For a cleaner public repository, consider renaming the four folders to:
-
-```text
-serial-fortran/
-parallel-2d-fortran/
-parallel-3d-fortran/
-matlab/
-```
-
-Renaming is optional. Avoid changing directory names until build scripts and internal paths have been checked.
-
 ---
 
 ## Scientific Scope
