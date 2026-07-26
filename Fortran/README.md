@@ -56,7 +56,12 @@ RST_compositionalTwoPhaseFlow.F90
 ```
 
 to match the size of the Sparse Grid surrogate.
-For example, if there are only 2 components and there are 129 points in p direction and 129 points in z1 direction, then TABLESIZE = 129*129. If there are 3 components and there are 17 points in p direction and 257 points in z1 direction and 257 points in z2 direction, then TABLESIZE = 17*(1+257)/2*257. 
+Set TABLESIZE to match the total number of nodes in the Sparse Grid surrogate. For example:
+
+2-component system: 129 pressure (p) grid points and 129 composition (z₁) grid points
+TABLESIZE = 129 × 129
+3-component system: 17 pressure (p) grid points, 257 z₁ grid points, and 257 z₂ grid points
+TABLESIZE = 17 × (1 + 257) / 2 × 257
 
 ### Dummy Flash File
 
