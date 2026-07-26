@@ -353,8 +353,6 @@ BibTeX template:
 
 See [`LICENSE`](LICENSE).
 
-Before applying an open-source license, confirm that you have permission to license code developed at KAUST or under a sponsored research project.
-
 ---
 
 ## Author
