@@ -31,23 +31,6 @@ In addition to compositional two-phase flow, the framework can also be configure
 
 ---
 
-# Repository Structure
-
-```text
-.
-├── src/                 # Fortran source code
-├── input/               # Input cases
-├── docs/                # Documentation
-├── matlabplots/         # MATLAB visualization
-├── examples/            # Example cases
-├── scripts/             # Utility scripts
-├── Makefile
-├── README.md
-└── LICENSE
-```
-
----
-
 # Requirements
 
 - Modern Fortran compiler
