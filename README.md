@@ -51,10 +51,10 @@ The original project documentation states that the 2D parallel implementation su
 
 | Implementation | Language / model | Intended use | Directory |
 |---|---|---|---|
-| Serial solver | Fortran, serial | Baseline implementation and debugging | FORTRAN |
-| 2D HPC solver | Fortran + MPI | Parallel two-dimensional simulation | Hpc |
-| 3D HPC solver | Fortran + MPI | Parallel three-dimensional simulation | Hpc_3D |
-| MATLAB solver | MATLAB | Prototyping, analysis, and visualization | Matlab |
+| Serial solver | Fortran, serial | Baseline implementation and debugging | serial-fortran |
+| 2D HPC solver | Fortran + MPI | Parallel two-dimensional simulation | parallel-2d-fortran |
+| 3D HPC solver | Fortran + MPI | Parallel three-dimensional simulation | parallel-3d-fortran |
+| MATLAB solver | MATLAB | Prototyping, analysis, and visualization | matlab |
 
 ### Recommended directory names
 
