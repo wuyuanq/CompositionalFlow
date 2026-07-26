@@ -17,6 +17,11 @@ This repository contains a parallel **Fortran** simulator for **2D two-phase com
 
 In addition to compositional two-phase flow, the framework can also be configured for single-phase simulations. Optional Sparse Grid surrogate models are available to accelerate flash calculations.
 
+<<<<<<< HEAD:Hpc/README.md
+=======
+> This README is reorganized from the original project documentation while preserving the documented functionality and usage instructions. The original documentation describes MPI execution, Shaheen/Neser deployment, Sparse Grid configuration, and output generation.
+
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 ---
 
 # Features
@@ -31,11 +36,35 @@ In addition to compositional two-phase flow, the framework can also be configure
 
 ---
 
+<<<<<<< HEAD:Hpc/README.md
+=======
+# Repository Structure
+
+```text
+.
+├── src/                 # Fortran source code
+├── input/               # Input cases
+├── docs/                # Documentation
+├── matlabplots/         # MATLAB visualization
+├── examples/            # Example cases
+├── scripts/             # Utility scripts
+├── Makefile
+├── README.md
+└── LICENSE
+```
+
+---
+
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 # Requirements
 
 - Modern Fortran compiler
 - MPI implementation (OpenMPI / Intel MPI)
+<<<<<<< HEAD:Hpc/README.md
 - Mac
+=======
+- Linux
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 - Make
 - MATLAB (optional)
 
@@ -54,7 +83,11 @@ make
 Compile the project
 
 ```bash
+<<<<<<< HEAD:Hpc/README.md
 make -f Makefile.mac
+=======
+make
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 ```
 
 Run with MPI
@@ -71,6 +104,45 @@ The number of MPI processes must remain consistent in:
 
 ---
 
+<<<<<<< HEAD:Hpc/README.md
+=======
+# Running on Shaheen
+
+Load the required environment
+
+```bash
+module load bluegene
+```
+
+Create an output directory before execution.
+
+```bash
+mkdir case1
+```
+
+---
+
+# Running on Neser
+
+Load required modules
+
+```bash
+module unload openmpi/1.5.4/gcc
+module load intel-compilers/11.1
+module load openmpi/1.6.4/intel
+```
+
+Create the output directory
+
+```bash
+mkdir case1
+```
+
+For large simulations, additional compute nodes may be required to avoid insufficient virtual memory.
+
+---
+
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 # Sparse Grid Flash Calculation
 
 The Makefile variable
@@ -150,6 +222,22 @@ which generates visualization figures.
 
 ---
 
+<<<<<<< HEAD:Hpc/README.md
+=======
+# Future Improvements
+
+Potential enhancements include:
+
+- GitHub Actions CI
+- Unit tests
+- Doxygen documentation
+- Performance benchmark results
+- Example datasets
+- Docker support
+
+---
+
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md
 # Citation
 
 If you use this project in academic research, please cite the associated publication (if available).
@@ -170,4 +258,8 @@ Email: wuyuanq@gmail.com
 
 # License
 
+<<<<<<< HEAD:Hpc/README.md
 This project is licensed under the MIT License.
+=======
+Please add an appropriate open-source license (MIT, BSD, GPL, etc.) before public release.
+>>>>>>> 3fcfc2d (Rename project directories):parallel-2d-fortran/README.md

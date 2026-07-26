@@ -1,0 +1,71 @@
+
+# Author:
+#   Yuanqing Wu, KAUST, Saudi Arabia
+#
+# History:
+#   2015-2-9 by Yuanqing Wu
+#
+# Support:
+#   wuyuanq@gmail.com
+
+PROG = CompositionalFlow_fortran_hpc
+defaults: ${PROG}
+
+FCC = ftn
+
+#FCFLAGS = -O3 -fdefault-real-8
+#FCFLAGS = -O3 -fbounds-check 
+#FCFLAGS = -qarch=450 -O3 -qstrict -qdbg -g
+FCFLAGS = -O3
+
+FLASHTYPE = SPARSE
+FLASHTYPE =
+
+ifeq ($(FLASHTYPE), SPARSE)
+FLASHFLAGS = -DSPARSE
+else
+FLASHFLAGS = 
+endif
+
+VPATH = ../../FlashCalculation
+
+ifeq ($(FLASHTYPE), SPARSE)
+vpath RST_flashcalculation_fullgrid.F90 ../CompositionalFlow_fortran
+endif 
+
+MMSRCS = RST_model.F90 RST_globalData.F90 RST_mathlib.F90
+
+ifeq ($(FLASHTYPE), SPARSE)
+FLASHSRCS = RST_flashcalculation_fullgrid.F90
+else
+FLASHSRCS = RST_PREOS.F90 RST_comprefac.F90 RST_fugacitycoef.F90 \
+RST_stability.F90 RST_pmv.F90 RST_flashcalculation.F90
+endif
+
+FSRCS= RST_viscosity.F90 RST_writeFile.F90 RST_genPlotfileMatlab.F90 \
+RST_compositionalTwoPhaseFlow.F90 RST_compositionalTwoPhaseFlowDriver.F90 \
+RST_proceAlloc.F90 infile_RSTi_compositionalTwoPhaseFlow.F90
+      
+%.o: %.F90
+	$(FCC) -c $(FLASHFLAGS) $(FCFLAGS) $^ -o $@
+
+MMOBJS = $(MMSRCS:.F90=.o)
+FLASHOBJS = $(FLASHSRCS:.F90=.o)
+FOBJS = $(FSRCS:.F90=.o)
+
+$(PROG): $(MMOBJS) $(FLASHOBJS) $(FOBJS) 
+	$(FCC) $(FLASHFLAGS) $(FCFLAGS) $(MMOBJS) $(FLASHOBJS) $(FOBJS) $(LIBS) -o $(PROG)
+
+LIBS = -L/project/k1053/Wu/hypre-2.9.0b-gnu/lib -lHYPRE
+
+all: $(PROG)
+
+.PHONY: clean
+
+clean:
+	rm -rf *.mod *.o core.* error.* output.* $(PROG)
+
+run: ${PROG} 
+	mpirun -np 1 ./${PROG}
+
+
