@@ -52,7 +52,7 @@ In addition to compositional two-phase flow, the framework can also be configure
 
 - Modern Fortran compiler
 - MPI implementation (OpenMPI / Intel MPI)
-- Linux / Mac
+- Mac
 - Make
 - MATLAB (optional)
 
@@ -71,7 +71,7 @@ make
 Compile the project
 
 ```bash
-make
+make -f Makefile.mac
 ```
 
 Run with MPI
