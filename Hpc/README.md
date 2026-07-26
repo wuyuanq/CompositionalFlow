@@ -170,4 +170,4 @@ Email: wuyuanq@gmail.com
 
 # License
 
-Please add an appropriate open-source license (MIT, BSD, GPL, etc.) before public release.
+This project is licensed under the MIT License.
