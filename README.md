@@ -49,14 +49,12 @@ The original project documentation states that the 2D parallel implementation su
 
 ## Implementations
 
-Update the **Directory** column below so that it exactly matches the four directory names currently used in the repository.
-
 | Implementation | Language / model | Intended use | Directory |
 |---|---|---|---|
-| Serial solver | Fortran, serial | Baseline implementation and debugging | `FORTRAN` |
-| 2D HPC solver | Fortran + MPI | Parallel two-dimensional simulation | `Hpc` |
-| 3D HPC solver | Fortran + MPI | Parallel three-dimensional simulation | `Hpc_3D` |
-| MATLAB solver | MATLAB | Prototyping, analysis, and visualization | `Matlab` |
+| Serial solver | Fortran, serial | Baseline implementation and debugging | FORTRAN |
+| 2D HPC solver | Fortran + MPI | Parallel two-dimensional simulation | Hpc |
+| 3D HPC solver | Fortran + MPI | Parallel three-dimensional simulation | Hpc_3D |
+| MATLAB solver | MATLAB | Prototyping, analysis, and visualization | Matlab |
 
 ### Recommended directory names
 
