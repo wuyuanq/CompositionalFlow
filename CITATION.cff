@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "CompositionalFlow"
+type: software
+authors:
+  - family-names: "Wu"
+    given-names: "Yuanqing"
+repository-code: "https://github.com/wuyuanq/CompositionalFlow"
+license: "NOASSERTION"
+date-released: "2015-02-09"
+abstract: >-
+  Serial Fortran, parallel 2D Fortran/MPI, parallel 3D Fortran/MPI,
+  and MATLAB implementations of compositional-flow simulation.
+keywords:
+  - compositional flow
+  - porous media
+  - Fortran
+  - MATLAB
+  - MPI
+  - high-performance computing
