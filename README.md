@@ -11,8 +11,6 @@ This repository collects four implementations of a compositional-flow simulator:
 
 The implementations are retained together to support numerical comparison, algorithm development, reproducibility, and performance studies across programming languages and execution models.
 
-> **Repository status:** Research software. The original cluster configurations and compiler versions may require modification on modern systems.
-
 ---
 
 ## Contents
